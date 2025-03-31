@@ -1,5 +1,5 @@
 class DuasPilhas{
-    constructor(size= 10){
+    constructor(size){
         this.array = new Array(size);
         this.topoA = 0;
         this.topoB = size-1;
