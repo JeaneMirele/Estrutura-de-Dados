@@ -1,7 +1,7 @@
-function inverte(string){
+export function inverte(string){
     let pilha = [];
 
-    for(letra of string){
+    for(let letra of string){
        pilha.push(letra);
     }
   
@@ -14,5 +14,3 @@ function inverte(string){
     return invertida;
 }
 
-let resultado = inverte("Abacaxi");
-console.log("Palavra invertida: ", resultado);
