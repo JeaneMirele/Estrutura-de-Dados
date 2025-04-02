@@ -1,7 +1,7 @@
-import Pilha, {troca } from "../src/Lista 01/questao3";
+import {troca } from "../src/Lista 01/questao3";
+import Pilha from "../src/Lista 01/Pilha";
 
 let p;
-
 beforeEach(()=>{
     p = new Pilha(5);
 })

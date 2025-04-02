@@ -1,24 +1,4 @@
-export default class Pilha{
-
-    constructor(size){
-        this.dados = [];
-        this.size = size;
-    }
-
-    push(elemento){
-        this.dados.push(elemento);
-    }
-
-    pop(){
-      return this.dados.pop();
-      
-    }
-
-    isEmpty(){
-        return this.dados.length === 0;
-    }
-}
-
+import Pilha from "./Pilha";
 export function conversorDecBin(num){
     let pilha = new Pilha();
 

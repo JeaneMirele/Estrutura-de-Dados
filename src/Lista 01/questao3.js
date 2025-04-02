@@ -1,37 +1,11 @@
-export default class Pilha{
-
-    constructor(size = 5){
-        this.dados = [];
-        this.size = size;
-    }
-
-    push(elemento){
-        this.dados.push(elemento);
-    }
-
-    pop(){
-      return this.dados.pop();
-      
-    }
-
-    isFull(){
-        return this.size === this.dados.length;
-           
-    }
-
-    isEmpty(){
-        return this.dados.length === 0;
-    }
-    
-}
-
+import Pilha from "./Pilha";
 export function troca(p){
    
     let p2 = new Pilha();
 
     let topoP1 = p.pop();
 
-    while(p.dados.length > 1) {
+    while(p.length() > 1) {
        let elemento = p.pop();
         p2.push(elemento);
     }
