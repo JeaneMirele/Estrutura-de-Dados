@@ -1,10 +1,32 @@
-/*É possível analisar se uma sequência parêntesis e colchetes está bem-formada,
-ou seja, parênteses e colchetes são fechados na ordem inversa àquela em que foram abertos
-utilizando uma pilha. Por exemplo, a sequência [ ( ) [ ( ) ] ] ( ) está bem-formada, enquanto ( ( )
-] está malformada. Implemente um programa que recebe um texto e analisa se ele está bem
-formado em termos de ordem de parêntesis e colchetes.*/
+import Pilha from "./Pilha.js";
 
- /*quando eu receber um ( empilha, quando eu receber um ) desempilha*/
+export function bemFormado(texto){
+   
+        let p = new Pilha(texto.length);
+      
+        for (let i = 0; i < texto.length; i++) {
+          let char = texto[i];
+          
+          if (char === '(' || char === '[') {
+            p.push(char);
 
-
- 
+          }
+            
+          else if (char === ')' || char === ']') {
+            if (p.isEmpty()) {
+              return "Está mal formadov"; 
+            }
+      
+            let topo = p.top();
+      
+           
+            if ((char === ')' && topo === '(') || (char === ']' && topo === '[')) {
+              p.pop(); 
+          }
+        }
+      
+      }
+        return p.isEmpty() ? "Está bem formada" : "Está mal formada";
+      
+    }
+      

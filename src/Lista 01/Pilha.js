@@ -1,6 +1,6 @@
 export default class Pilha{
 
-    constructor(size = 5){
+    constructor(size = 10){
         this.dados = [];
         this.size = size;
         this.topo = 0;
@@ -20,10 +20,16 @@ export default class Pilha{
             throw new Error ("Stack Underflow");
         }
 
-        let pop = this.dados[this.topo-1];
         this.topo--;
-        return pop;
+        return this.dados.pop();
       
+    }
+
+    top(){
+        if(this.isEmpty()){
+            throw new Error ("Stack Underflow");
+        }
+        return this.dados[this.topo-1];
     }
 
     isFull(){
@@ -32,7 +38,7 @@ export default class Pilha{
     }
 
     isEmpty(){
-        return this.length() === 0;
+        return this.topo === 0;
     }
     
     length(){
@@ -40,6 +46,6 @@ export default class Pilha{
     }
 
     clear(){
-        return this.topo === 0;
+        return this.topo = 0;
     }
 }
