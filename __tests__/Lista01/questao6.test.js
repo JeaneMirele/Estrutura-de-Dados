@@ -1,4 +1,4 @@
-import { RPNform } from "../src/Lista 01/questao6"; 
+import { RPNform } from "../../src/Lista 01/questao6"; 
 
 describe("Conversão de expressão", () => {
   test("Converte 'a + b * c' corretamente", () => {

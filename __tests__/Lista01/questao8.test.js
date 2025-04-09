@@ -1,4 +1,4 @@
-import PilhaDePratos from "../src/Lista 01/questao8";
+import PilhaDePratos from "../../src/Lista 01/questao8";
 
 
 test("Se eu passar a capacidade, a pilha será criada?", () =>{

@@ -1,5 +1,5 @@
-import {troca } from "../src/Lista 01/questao3";
-import Pilha from "../src/Lista 01/Pilha";
+import {troca } from "../../src/Lista 01/questao3";
+import Pilha from "../../src/Lista 01/Pilha";
 
 let p;
 beforeEach(()=>{

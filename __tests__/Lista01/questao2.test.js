@@ -1,4 +1,4 @@
-import DuasPilhas from "../src/Lista 01/questao2";
+import DuasPilhas from "../../src/Lista 01/questao2";
 let pilha;
 
 beforeEach(() => {

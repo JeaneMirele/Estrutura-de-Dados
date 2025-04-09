@@ -1,4 +1,4 @@
-import { bemFormado } from "../src/Lista 01/questao5";
+import { bemFormado } from "../../src/Lista 01/questao5";
 
 
 let texto;
