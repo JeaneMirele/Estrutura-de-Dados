@@ -2,7 +2,7 @@ import Pilha from "./Pilha.js";
 
 export function bemFormado(texto){
    
-        let p = new Pilha(texto.length);
+        const p = new Pilha(texto.length);
       
         for (let i = 0; i < texto.length; i++) {
           let char = texto[i];

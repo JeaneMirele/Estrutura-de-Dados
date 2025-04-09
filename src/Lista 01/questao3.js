@@ -1,7 +1,7 @@
 import Pilha from "./Pilha";
 export function troca(p){
    
-    let p2 = new Pilha();
+    const p2 = new Pilha();
 
     let topoP1 = p.pop();
 

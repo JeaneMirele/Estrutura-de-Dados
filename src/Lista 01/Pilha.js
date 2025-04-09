@@ -19,11 +19,10 @@ export default class Pilha{
         if(this.isEmpty()){
             throw new Error ("Stack Underflow");
         }
-
+    
         this.topo--;
-        return this.dados.pop();
-      
-    }
+        return this.dados[this.topo];
+        }
 
     top(){
         if(this.isEmpty()){

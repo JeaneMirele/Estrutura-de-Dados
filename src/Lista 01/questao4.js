@@ -1,6 +1,6 @@
 import Pilha from "./Pilha";
 export function conversorDecBin(num){
-    let pilha = new Pilha();
+    const pilha = new Pilha();
 
     if (num === 0) {
         return "0"; 
@@ -13,6 +13,7 @@ export function conversorDecBin(num){
     }
     let binario = "";
     while(!pilha.isEmpty()){
+
     binario += pilha.pop();
     }
     

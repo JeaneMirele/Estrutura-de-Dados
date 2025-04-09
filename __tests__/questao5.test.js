@@ -1,5 +1,5 @@
 import { bemFormado } from "../src/Lista 01/questao5";
-import Pilha from "../src/Lista 01/Pilha";
+
 
 let texto;
 

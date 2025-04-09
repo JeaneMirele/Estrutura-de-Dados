@@ -1,5 +1,5 @@
 export function inverte(string){
-    let pilha = [];
+    const pilha = [];
 
     for(let letra of string){
        pilha.push(letra);
