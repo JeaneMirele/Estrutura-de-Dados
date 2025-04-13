@@ -1,4 +1,4 @@
-class Queue{
+class Fila{
     constructor(size = 5){
         this.dados = [];
         this.inicio = 0;
@@ -21,11 +21,12 @@ class Queue{
     dequeue(){
         if(this.isEmpty()) throw new Error ("Queue underflow");
 
-        if(this.inicio === size){
+        let resultado = this.front();
+        if(this.inicio === this.size){
             this.inicio = 0;
         }
         this.inicio++;
-
+        return resultado;
     }
 
     front(){
@@ -38,7 +39,7 @@ class Queue{
     }
 
     isFull(){
-        return this.lenght() === this.size;
+        return this.length() === this.size;
 
     }
 
@@ -47,7 +48,7 @@ class Queue{
         this.fim = 0;
 
     }
-    lenght(){
+    length(){
         if(this.isEmpty()) return 0;
         if(this.inicio < this.fim) return this.fim - this.inicio;
         return (this.size + 1 - this.inicio) + this.fim;
@@ -58,10 +59,11 @@ class Queue{
         if(this.isEmpty()) return "Fila vazia";
 
         let resultado = [];
-        for (let i=0; i < this.lenght(); i++){
+        for (let i=0; i < this.length(); i++){
             let index = (this.inicio + i) % this.size;
-            resultado.push(this.fila[index]);
+            resultado.push(this.dados[index]);
         }
         return resultado.join(" ");
         }
     }
+export default Fila;

@@ -3,8 +3,8 @@ import Fila from "./Fila";
 class PilhaComFila{
     constructor(size = 5){
         this.size = size;
-        this.fila = new Fila();
-        this.fila2 = new Fila();
+        this.fila = new Fila(size);
+        this.fila2 = new Fila(size);
     }
 
     push(dado){
@@ -14,7 +14,7 @@ class PilhaComFila{
 
     pop(){
         if(this.isEmpty()) throw new Error ("Stack Underflow");
-       while(this.fila.length() > 1){
+       while(this.length() > 1){
             this.fila2.enqueue(this.fila.dequeue());
        }
 
@@ -47,3 +47,4 @@ class PilhaComFila{
     return this.fila.toString();
     }
 }
+export default PilhaComFila;
