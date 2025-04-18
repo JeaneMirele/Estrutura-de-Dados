@@ -9,12 +9,67 @@
     v. Implemente a função de remover do fim de um Deque. (0,5)*/
 
 
+    class Deque {
+        constructor(capacidade = 100) {
+          this.deque = new Array(capacidade); 
+          this.capacidade = capacidade;
+          this.inicio = Math.floor(capacidade / 2); 
+          this.fim = this.inicio;
+        }
+      
+  
+        inserirInicio(valor) {
+          if (this.inicio === 0) {
+            console.log("Deque cheio no início");
+            return;
+          }
+          this.inicio--;
+          this.deque[this.inicio] = valor;
+        }
+      
+      
+        inserirFim(valor) {
+          if (this.fim === this.capacidade) {
+            console.log("Deque cheio no fim");
+            return;
+          }
+          this.deque[this.fim] = valor;
+          this.fim++;
+        }
+      
 
-    export function instanciar(){
-       
-    }
-    
-    export function inserir(deque){
-        
+        removerInicio() {
+          if (this.isEmpty()) {
+            console.log("Deque vazio");
+            return null;
+          }
+          const valor = this.deque[this.inicio];
+          this.inicio++;
+          return valor;
+        }
+      
+ 
+        removerFim() {
+          if (this.isEmpty()) {
+            console.log("Deque vazio");
+            return null;
+          }
+          this.fim--;
+          return this.deque[this.fim];
+        }
+      
 
-    }
+        isEmpty() {
+          return this.inicio === this.fim;
+        }
+      
+ 
+        imprimir() {
+          let resultado = "";
+          for (let i = this.inicio; i < this.fim; i++) {
+            resultado += this.deque[i] + " ";
+          }
+          console.log(resultado.trim());
+        }
+      }
+      export default Deque;
