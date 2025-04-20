@@ -1,6 +1,6 @@
 class No{
-    constructor(dados){
-        this.dados = dados;
+    constructor(valor){
+        this.valor = valor;
         this.proximo = null;
     }
 }

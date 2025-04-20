@@ -10,6 +10,7 @@ class Lista{
         let novoNo = new No(dado);
         novoNo.proximo = this.head.proximo;
         this.head.proximo = novoNo;
+        this.tamanho++;
     }
 
     append(dado){
@@ -27,7 +28,7 @@ class Lista{
 
     removeFirst(){
         if(this.isEmpty()){
-           return "Lista Vazia!"
+           return;
         }else{
         let remove = this.head;
         this.head = this.head.proximo; // faz a cabeça receber o próximo nó, ou seja, ela terá o mesmo valor e ponteiro do nó a que ela apontava;
@@ -37,23 +38,20 @@ class Lista{
 
     removeLast() {
         if (this.isEmpty()) {
-          return "Lista Vazia!";
+          return;
         }
       
         let anterior = this.head;
         let atual = this.head.proximo;
       
-        if (atual.proximo === null) {
-          this.head.proximo = null;
-          return atual.valor;
-        }
-      
         while (atual.proximo !== null) {
           anterior = atual;
+          this.tamanho--;
           atual = atual.proximo;
         }
       
         anterior.proximo = null;
+        this.tamanho--;
         return atual.valor;
       }
 
@@ -100,7 +98,7 @@ class Lista{
         let atual = this.head;
         while (atual) {
           if (atual.valor === valorBuscado) {
-            return true; 
+            return atual.valor; 
           }
           atual = atual.proximo;
         }
