@@ -11,18 +11,21 @@ class Lista{
         novoNo.proximo = this.head.proximo;
         this.head.proximo = novoNo;
         this.tamanho++;
+       
     }
 
     append(dado){
         let novoNo = new No(dado);
         if(this.isEmpty()){
             this.head.proximo = novoNo;
+            this.tamanho++;
         }else{
         let atual = this.head;
         while(atual.proximo !== null){
             atual = atual.proximo;
         }
         atual.proximo = novoNo;
+        this.tamanho++;
         }
     }
 
@@ -30,9 +33,10 @@ class Lista{
         if(this.isEmpty()){
            return;
         }else{
-        let remove = this.head;
-        this.head = this.head.proximo; // faz a cabeça receber o próximo nó, ou seja, ela terá o mesmo valor e ponteiro do nó a que ela apontava;
-        return remove.valor;
+        let removido = this.head.proximo;        
+        this.head.proximo = removido.proximo;    
+        this.tamanho--;
+        return removido.valor;    
         }
     }
 
@@ -111,8 +115,12 @@ class Lista{
 
     length(){
         return this.tamanho;
-    }   
-          
+    } 
+
+    clear(){
+      this.head = new No();
+      this.tamanho = 0;
+    }
 }
 
 export default Lista;

@@ -40,7 +40,7 @@ class PilhaComLista{
     }
 
     clear(){
-        this.lista.head = null;
+        this.lista.clear();
     }
 
 }
